@@ -1,12 +1,12 @@
 import { RiShoppingCart2Line } from 'react-icons/ri'
 
-const CartWidget = () => {
+const CartWidgetRI = () => {
     return(
-        <div>
+        <div className="cart-widget-item">
             <RiShoppingCart2Line/>
         </div>
-    )
+    );
 
-}
+};
 
-export default CartWidget;
+export default CartWidgetRI;

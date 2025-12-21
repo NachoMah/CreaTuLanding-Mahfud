@@ -1,0 +1,27 @@
+.navbar-sw {
+  background-color: black;
+}
+
+.navbar-brand-sw {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-weight: bold;
+}
+
+.navbar-logo {
+  width: 8rem;
+}
+
+.navbar-sw .nav-link {
+  color: white;
+}
+
+.navbar-sw .nav-link:hover {
+  color: #feda4a;
+}
+
+.cart-widget-item{
+    color: #feda4a;
+    font-size: 1.5rem;
+}
