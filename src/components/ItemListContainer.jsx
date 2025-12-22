@@ -1,7 +1,9 @@
-const ItemListContainer = ({bienvenida}) => {
+const ItemListContainer = ({bienvenida, introduccion, fuerza}) => {
     return(
         <div className="div-container mt-4">
-            <h2>{bienvenida}</h2>
+            <h1>{bienvenida}</h1>
+            <h2>{introduccion}</h2>
+            <p>{fuerza}</p>
         </div>
     );
 };

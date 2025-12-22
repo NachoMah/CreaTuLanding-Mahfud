@@ -5,12 +5,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
-  const bienvenida = "¡Sé parte de una galaxia muy muy lejana con nuestros prodcutos!";
+  const bienvenida = "Bienvenido a Star Wars Store!";
+  const introduccion = "Explorá productos de una galaxia muy muy lejana"
+  const fuerza = "¡Que la Fuerza te acompañe!"
 
   return (
     <>
       <NavBarBS/>
       <ItemListContainer bienvenida={bienvenida}/>
+      <ItemListContainer introduccion={introduccion}/>
+      <ItemListContainer fuerza={fuerza}/>
     </>
   );
 }
