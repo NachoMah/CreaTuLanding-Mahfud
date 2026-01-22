@@ -23,7 +23,7 @@ function NavBarBS() {
 
             <NavDropdown title="Prodcutos" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Sables</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Ropa</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">Funko Pop</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Naves</NavDropdown.Item>
             </NavDropdown>
           </Nav>
