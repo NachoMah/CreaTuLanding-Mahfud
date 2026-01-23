@@ -14,6 +14,7 @@ const [data, setData] = useState([])
             <h1>{bienvenida}</h1>
             <h2>{introduccion}</h2>
             <p>{fuerza}</p>
+            <ItemList data={data}/>
         </div>
     );
 };
