@@ -1,5 +1,3 @@
-console.log("ItemListContainer render");
-
 import { useEffect, useState } from "react";
 import { getProducts } from "../asyncMock/data"; 
 import ItemList from "./ItemList";

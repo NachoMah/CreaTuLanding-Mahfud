@@ -13,7 +13,10 @@ const Item = ({ product }) => {
         <Card.Text>
           ${product.price},00
         </Card.Text>
-        <Button variant="primary">Ver producto</Button>
+        <Card.Text>
+            Stock disponible: {product.stock}
+        </Card.Text>
+        <Button variant="warning">Ver producto</Button>
       </Card.Body>
     </Card>
   )
