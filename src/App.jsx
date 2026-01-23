@@ -12,9 +12,11 @@ function App() {
   return (
     <>
       <NavBarBS/>
-      <ItemListContainer bienvenida={bienvenida}/>
-      <ItemListContainer introduccion={introduccion}/>
-      <ItemListContainer fuerza={fuerza}/>
+      <ItemListContainer 
+        bienvenida={bienvenida}
+        introduccion={introduccion}
+        fuerza={fuerza}
+      />
     </>
   );
 }

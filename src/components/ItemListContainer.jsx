@@ -1,5 +1,8 @@
+console.log("ItemListContainer render");
+
 import { useEffect, useState } from "react";
 import { getProducts } from "../asyncMock/data"; 
+import ItemList from "./ItemList";
 
 const ItemListContainer = ({bienvenida, introduccion, fuerza}) => {
 const [data, setData] = useState([])
