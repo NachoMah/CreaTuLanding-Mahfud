@@ -49,3 +49,17 @@ const products = [
         img: "https://i.postimg.cc/XYjFhNW2/funko_LS.webp", 
     },
 ]
+
+let error = false
+export const getProducts = () => {
+    return new Promise((resolve, reject) => {setTimeout(() => {
+        if(error) {
+            reject("Ocurrió un error. Por favor, ingrese a la página en otro momento")
+        }
+        else {
+            resolve(products)
+        }
+    }, 1000)
+
+}) 
+}
