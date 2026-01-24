@@ -15,7 +15,7 @@ const products = [
         description: "Figura Funko Pop de Darth Vader con su clásico traje negro. Un infaltable para cualquier colección de Star Wars.",
         stock: 20,
         price: 10000,
-        category: "funko pop",
+        category: "funkopop",
         img: "https://i.postimg.cc/FsfVpHrv/funko_DV.jpg", 
     },
 
@@ -45,7 +45,7 @@ const products = [
         description: "Figura Funko Pop de Luke Skywalker. Representación clásica del héroe de la saga, perfecta para sumar a tu colección.",
         stock: 10,
         price: 10000,
-        category: "funko pop",
+        category: "funkopop",
         img: "https://i.postimg.cc/XYjFhNW2/funko_LS.webp", 
     },
 ]

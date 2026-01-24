@@ -23,6 +23,7 @@ function App() {
           introduccion={introduccion}
           fuerza={fuerza}/>}  
         />
+        <Route path="/category/:type" element = {<ItemListContainer/>}  />
         <Route path="/item/:id" element={<ItemDetailContainer/>} />
         <Route path="*" element={<ErrorComodin/>} />
 
