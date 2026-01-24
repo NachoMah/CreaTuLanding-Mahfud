@@ -17,15 +17,15 @@ function App() {
       <NavBarBS/>
 
       <Routes>
+
         <Route path="/" element = {<ItemListContainer 
           bienvenida={bienvenida}
           introduccion={introduccion}
           fuerza={fuerza}/>}  
         />
-
-        <Route path="/item" element={<ItemDetailContainer/>} />
-
+        <Route path="/item/:id" element={<ItemDetailContainer/>} />
         <Route path="*" element={<ErrorComodin/>} />
+
       </Routes>
       
     </BrowserRouter>
