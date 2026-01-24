@@ -4,6 +4,7 @@ import ItemListContainer from "./components/ItemListContainer";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ErrorComodin from './components/ErrorComodin';
 
 function App() {
 
@@ -23,6 +24,8 @@ function App() {
         />
 
         <Route path="/item" element={<ItemDetailContainer/>} />
+
+        <Route path="*" element={<ErrorComodin/>} />
       </Routes>
       
     </BrowserRouter>
