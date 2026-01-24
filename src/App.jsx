@@ -2,6 +2,7 @@ import './App.css'
 import NavBarBS from "./components/NavBarBS";
 import ItemListContainer from "./components/ItemListContainer";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         introduccion={introduccion}
         fuerza={fuerza}
       />
+      <ItemDetailContainer/>
     </>
   );
 }

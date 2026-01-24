@@ -63,3 +63,17 @@ export const getProducts = () => {
 
 }) 
 }
+
+export const getOneProduct = (id) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(()=> {
+            if (error) {
+                reject("Ocurrió un error. Por favor, ingrese a la página en otro momento")
+            }
+            else {
+                let product = products.find((prod) => prod.id === id);
+                resolve(product)
+            }
+        }, 2000)
+    })
+}
