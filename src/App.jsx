@@ -1,7 +1,7 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import NavBarBS from "./components/NavBarBS";
 import ItemListContainer from "./components/ItemListContainer";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ErrorComodin from './components/ErrorComodin';

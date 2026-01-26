@@ -1,6 +1,8 @@
+import "../css/ItemDetail.css";
+
 const ItemDetail = ({detail}) => {
     return (
-        <div>
+        <div className="item-detail">
             <h1>Detalle del producto: {detail.name}</h1>
             <img src={detail.img} alt={detail.name} />
             <p>{detail.description}</p>

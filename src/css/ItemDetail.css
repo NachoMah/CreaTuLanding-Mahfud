@@ -1,0 +1,10 @@
+.item-detail {
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.item-detail img {
+  margin: 1rem 0;
+  border-radius: 8px;
+}
