@@ -5,7 +5,7 @@ import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ErrorComodin from './components/ErrorComodin';
-import ItemCount from './components/ItemCount';
+import { CartProvider } from './context/CartContext';
 
 function App() {
 
@@ -15,8 +15,8 @@ function App() {
 
   return (
     <BrowserRouter>
+    <CartProvider>
       <NavBarBS/>
-
       <Routes>
 
         <Route path="/" element = {<ItemListContainer 
@@ -27,11 +27,9 @@ function App() {
         <Route path="/category/:type" element = {<ItemListContainer/>}  />
         <Route path="/item/:id" element={<ItemDetailContainer/>} />
         <Route path="*" element={<ErrorComodin/>} />
-
-      </Routes>
-
-      <ItemCount stock={10}/>
       
+      </Routes>
+    </CartProvider>  
     </BrowserRouter>
   );
 }
