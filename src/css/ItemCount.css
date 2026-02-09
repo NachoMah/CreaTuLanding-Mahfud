@@ -1,0 +1,29 @@
+.itemCount{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.itemCount-btn{
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 6px;
+    background-color: #ffc107;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.itemCount-btn:hover{
+    background-color: #e0a800;
+}
+
+.itemCount-value{
+    font-size: 18px;
+    font-weight: 600;
+    min-width: 20px;
+    text-align: center;
+}

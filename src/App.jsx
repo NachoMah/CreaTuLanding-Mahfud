@@ -5,6 +5,7 @@ import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ErrorComodin from './components/ErrorComodin';
+import ItemCount from './components/ItemCount';
 
 function App() {
 
@@ -28,6 +29,8 @@ function App() {
         <Route path="*" element={<ErrorComodin/>} />
 
       </Routes>
+
+      <ItemCount stock={10}/>
       
     </BrowserRouter>
   );
