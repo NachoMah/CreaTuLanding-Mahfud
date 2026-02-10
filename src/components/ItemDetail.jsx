@@ -4,8 +4,12 @@ import "../css/ItemDetail.css";
 import ItemCount from "./ItemCount"
 
 const ItemDetail = ({detail}) => {
+
+    const {addItem, cart} = useContext(CartContext)
+
     const onAdd = (cantidad) => {
         console.log(`Agregaste una unidad del prodcuto ${detail.name}`)
+        addItem(detail, cantidad)
     }
 
     return (

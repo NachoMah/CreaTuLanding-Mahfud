@@ -14,8 +14,9 @@ function App() {
   const fuerza = "¡Que la Fuerza te acompañe!"
 
   return (
-    <BrowserRouter>
     <CartProvider>
+      <BrowserRouter>
+    
       <NavBarBS/>
       <Routes>
 
@@ -29,8 +30,9 @@ function App() {
         <Route path="*" element={<ErrorComodin/>} />
       
       </Routes>
+      </BrowserRouter>
     </CartProvider>  
-    </BrowserRouter>
+    
   );
 }
 
