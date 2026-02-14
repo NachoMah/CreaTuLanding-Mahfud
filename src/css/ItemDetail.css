@@ -7,4 +7,6 @@
 .item-detail img {
   margin: 1rem 0;
   border-radius: 8px;
+  align-items: center;
+  max-width: 700px
 }
