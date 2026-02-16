@@ -3,13 +3,40 @@ import { getProducts } from "../asyncMock/data";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import Loader from "./Loader";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../service/firebase"
 
 const ItemListContainer = ({bienvenida, introduccion, fuerza}) => {
 const [data, setData] = useState([])
 const [loading, setLoading] = useState(false)
 const {type} = useParams()
 
-    useEffect(() => {
+useEffect(() => {
+        setLoading(true)
+        const prodCollection = type ? query(collection(db, "productos"), where("category", "==", type)) : collection(db, "productos")
+
+        getDocs(prodCollection)
+        .then((res) =>{
+            //console.log(res)
+            //console.log(res.docs)
+            const list = res.docs.map((doc) => {
+                return{
+                    id:doc.id,
+                    ...doc.data()
+
+                }
+            })
+            setData(list)
+        }
+    
+    )
+        
+        .catch((error) => console.log(error))  
+        .finally(() => setLoading(false))
+    }, [])
+
+//Promesa
+   /* useEffect(() => {
         setLoading(true)
         getProducts()
         .then((res) => {
@@ -20,9 +47,9 @@ const {type} = useParams()
                 setData(res)
             }
         })
-        .catch((error) => console.log(error))
+        .catch((error) => console.log(error))  
         .finally(() => setLoading(false))
-    }, [type])
+    }, [type])*/
 
     return(
         loading ? 
