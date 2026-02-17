@@ -4,11 +4,11 @@ import { RiShoppingCart2Line } from 'react-icons/ri'
 import Badge from 'react-bootstrap/Badge';
 
 const CartWidgetRI = () => {
-const {cart} = useContext(CartContext)
+const {cart, cartQuantity} = useContext(CartContext)
     return(
         <div className="cart-widget-item">
             <RiShoppingCart2Line/>
-            <Badge className="cart-badge" bg="warning" text="dark"> 4 </Badge>
+            {cart.length > 0 && <Badge className="cart-badge" bg="warning" text="dark"> {cartQuantity()} </Badge>}
         </div>
     );
 

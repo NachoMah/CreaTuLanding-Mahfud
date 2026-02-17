@@ -1,10 +1,12 @@
 import { useContext } from "react"
 import { CartContext } from "../context/CartContext"
+import { useNavigate } from "react-router-dom"
 import "../css/Cart.css"
 
 const CartView = () => {
 
     const {cart, removeItem, clear, total} = useContext(CartContext)
+    const navigate = useNavigate()
 
     return (
         <div className="cart-container">
@@ -39,13 +41,13 @@ const CartView = () => {
     ))}
 
     <div className="cart-total">
-        Total a pagar: $ {total && total()}
+        Total a pagar: ${total()},00
     </div>
 
     <div className="cart-buttons">
         <button 
             className="cart-btn cart-btn-primary"
-            onClick={clear}
+            onClick={() => navigate("/checkout")}
         >
             Terminar compra
         </button>
