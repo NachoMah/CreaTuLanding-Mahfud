@@ -10,3 +10,20 @@
   align-items: center;
   max-width: 700px
 }
+
+.btn-finalizar{
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #212529;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn-finalizar:hover{
+  background-color: #343a40;
+  color: white;
+}
