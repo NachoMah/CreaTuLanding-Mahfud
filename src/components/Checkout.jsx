@@ -4,6 +4,7 @@ import { serverTimestamp, collection, addDoc } from "firebase/firestore"
 import { db } from "../service/firebase" 
 import { Link } from "react-router-dom"
 import EmptyCart from "./EmptyCart"
+import "../css/Checkout.css"
 
 const Checkout = () => {
     const [buyer, setBuyer] = useState({})
@@ -59,26 +60,26 @@ const Checkout = () => {
         <>
         {
             orderId ?
-            <div>
+            <div className="checkout-success">
                 <h2>Gracias por su compra!</h2>
                 <h3>Orden de la compra: {orderId}</h3>
                 <h5>Siga explorando nuestra tienda y productos!</h5>
-                <Link to="/">Volver al inicio</Link>
+                <Link className="checkout-link" to="/">Volver al inicio</Link>
             </div>
             : 
-            <div>
-            <h1>Complete los sigueintes datos:</h1>
-            {error && <span>{error}</span>}
-            <form onSubmit={finalizarCompra}>
-                <input name="name" type="text" placeholder="Nombre:" onChange={buyerData}/>
-                <input name="lastname" type="text" placeholder="Apellido:" onChange={buyerData}/>
-                <input name="dni" type="number" placeholder="DNI:" onChange={buyerData}/>
-                <input name="email" type="email" placeholder="Correo:" onChange={buyerData}/>
-                <input name="email2" type="email" placeholder="Confirmar correo:" onChange={(e) => setValidMail(e.target.value)}/>
-                <button type="submit"  disabled={loading || !cart.length}>{loading ? "Procesando orden..." : "Generar Orden"}</button>
-                
-            </form>
-        </div>
+            <div className="checkout-container">
+                <h1>Complete los sigueintes datos:</h1>
+                {error && <span className="checkout-error">{error}</span>}
+                <form onSubmit={finalizarCompra} className="checkout-form">
+                    <input name="name" type="text" placeholder="Nombre:" onChange={buyerData}/>
+                    <input name="lastname" type="text" placeholder="Apellido:" onChange={buyerData}/>
+                    <input name="dni" type="number" placeholder="DNI:" onChange={buyerData}/>
+                    <input name="email" type="email" placeholder="Correo:" onChange={buyerData}/>
+                    <input name="email2" type="email" placeholder="Confirmar correo:" onChange={(e) => setValidMail(e.target.value)}/>
+                    <button type="submit"  disabled={loading || !cart.length}>{loading ? "Procesando orden..." : "Generar Orden"}</button>
+                    
+                </form>
+            </div>
         }
         </>
     )
