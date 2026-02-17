@@ -45,6 +45,14 @@ const CartView = () => {
     </div>
 
     <div className="cart-buttons">
+        
+        <button 
+            className="cart-btn cart-btn-secondary"
+            onClick={() => navigate("/")}
+        >   
+            Seguir explorando
+        </button>
+
         <button 
             className="cart-btn cart-btn-primary"
             onClick={() => navigate("/checkout")}
