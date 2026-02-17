@@ -36,7 +36,7 @@ useEffect(() => {
         
         .catch((error) => console.log(error))  
         .finally(() => setLoading(false))
-    }, [])
+    }, [type])
 
 //Promesa
    /* useEffect(() => {
