@@ -8,6 +8,7 @@ import ErrorComodin from './components/ErrorComodin';
 import { CartProvider } from './context/CartContext';
 import CartContainer from "./components/CartContainer";
 import Checkout from "./components/Checkout";
+import Footer from "./components/Footer"
 
 function App() {
 
@@ -18,22 +19,29 @@ function App() {
   return (
     <CartProvider>
       <BrowserRouter>
-    
-      <NavBarBS/>
-      <Routes>
+        <div className="app-container">
 
-        <Route path="/" element = {<ItemListContainer 
-          bienvenida={bienvenida}
-          introduccion={introduccion}
-          fuerza={fuerza}/>}  
-        />
-        <Route path="/category/:type" element = {<ItemListContainer/>}  />
-        <Route path="/item/:id" element={<ItemDetailContainer/>} />
-        <Route path="/cart" element={<CartContainer/>}/>
-        <Route path="/checkout" element={<Checkout/>}/>
-        <Route path="*" element={<ErrorComodin/>} />
+          <NavBarBS/>
 
-      </Routes>
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<ItemListContainer 
+                bienvenida={bienvenida}
+                introduccion={introduccion}
+                fuerza={fuerza}
+              />} />
+
+              <Route path="/category/:type" element={<ItemListContainer/>} />
+              <Route path="/item/:id" element={<ItemDetailContainer/>} />
+              <Route path="/cart" element={<CartContainer/>}/>
+              <Route path="/checkout" element={<Checkout/>}/>
+              <Route path="*" element={<ErrorComodin/>} />
+            </Routes>
+          </main>
+
+          <Footer />
+
+        </div>
       </BrowserRouter>
     </CartProvider>  
     
