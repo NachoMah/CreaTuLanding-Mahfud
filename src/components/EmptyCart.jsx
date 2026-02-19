@@ -9,6 +9,7 @@ const EmptyCart = () => {
             Explore la tienda de Star Wars y agregue nuevos productos
         </h2>
         <Link to="/">Ver productos</Link>
+        <img  src="https://i.postimg.cc/Cx4Xx3BG/jarjarbinks3.jpg" alt="Imagen de Jar Jar Binks sorprendido" />
     </div>
     )
 }
