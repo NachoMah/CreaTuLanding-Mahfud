@@ -1,16 +1,5 @@
 export const products = [
     {
-        //Ya subido a FireBase
-       /* id: "01",
-        name: "Sable de luz: Darth Vader ",
-        description: "Réplica inspirada en el sable de luz de Darth Vader. Diseño imponente del Lado Oscuro, ideal para coleccionistas y fanáticos de Star Wars.",
-        stock: 12,
-        price: 15000,
-        category: "sables",
-        img: "https://i.postimg.cc/JnqPf6gq/lightsaber_DV.webp", */
-    },
-
-    {
         
         name: "Funko Pop: Darth Vader",
         description: "Figura Funko Pop de Darth Vader con su clásico traje negro. Un infaltable para cualquier colección de Star Wars.",

@@ -32,13 +32,6 @@ const ItemDetailContainer = () => {
         .finally(()=> setLoading(false))
     }, [id])
 
-//Promesa
-   /* useEffect(() => {
-        getOneProduct(id)
-        .then((res) => setDetail(res))
-        .catch((error) => console.log(error))
-        .finally(()=> setLoading(false))
-    }, [id])*/
     if(invalid){
         return(
             <div>
