@@ -1,27 +1,51 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
+import Swal from "sweetalert2";
+
+
 
 export const CartContext = createContext()
 
+const carritoLS = JSON.parse(localStorage.getItem("carrito")) || []
+
 export const CartProvider = ({children}) => {
-const [cart, setCart] = useState([])
+
+    const [cart, setCart] = useState(carritoLS)
+
+    useEffect(()=>{
+        localStorage.setItem("carrito", JSON.stringify(cart))
+    }, [cart])
 
     const addItem = (item, qty) => {
-        if(isInCart(item.id)) {
-            setCart(
-                cart.map((prod) => {
-                    if(prod.id === item.id) {
-                        return {...prod, quantity: prod.quantity + qty}
-                    }
-                    else{
-                        return prod
-                    }
-                })
-            )
-        }
-        else{
-            setCart([...cart,{...item, quantity:qty}])
-        }
-        
+
+            const productInCart = cart.find(prod => prod.id === item.id)
+
+            if(productInCart){
+
+                const nuevaCantidad = productInCart.quantity + qty
+
+                if(nuevaCantidad > item.stock){
+                    return false
+                }
+
+                setCart(
+                    cart.map((prod) =>
+                        prod.id === item.id
+                            ? {...prod, quantity: nuevaCantidad}
+                            : prod
+                    )
+                )
+
+                return true
+            } 
+            else{
+
+                if(qty > item.stock){
+                    return false
+                }
+
+                setCart([...cart,{...item, quantity: qty}])
+                return true
+            }
     }
 
     const clear = () => {

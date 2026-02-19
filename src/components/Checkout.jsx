@@ -5,6 +5,7 @@ import { db } from "../service/firebase"
 import { Link } from "react-router-dom"
 import EmptyCart from "./EmptyCart"
 import "../css/Checkout.css"
+import Swal from "sweetalert2"
 
 const Checkout = () => {
     const [buyer, setBuyer] = useState({})
@@ -26,14 +27,41 @@ const Checkout = () => {
     const finalizarCompra = (e) => {
         e.preventDefault()
 
-        if (!buyer.name || !buyer.lastname || !buyer.dni || !buyer.email || !validMail) {
-           setError("Datos incompletos. Ingrese tdos los datos correspondientes")
+        if (!buyer.name.trim() || !buyer.lastname.trim() || !buyer.dni.trim() || !buyer.email.trim() || !validMail.trim()) {
+           Swal.fire({
+                icon: "error",
+                title: "Datos incompletos",
+                text: "Complete todos los campos",
+                background: "#111",
+                color: "#feda4a",
+                confirmButtonColor: "#ff2c2c"
+            })
             
         }else if (buyer.email !== validMail) {
-            setError("Los correos no coinciden")
+            Swal.fire({
+                icon: "warning",
+                title: "Los correos no coinciden",
+                background: "#111",
+                color: "#feda4a",
+                confirmButtonColor: "#feda4a"
+            })
+
         } else {
             setLoading(true)
             setError(null)
+
+            Swal.fire({
+                title: "Transmitiendo datos a la República...",
+                background: "#111",
+                color: "#feda4a",
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                showConfirmButton: false,
+                didOpen: () => {
+                    Swal.showLoading()
+                }
+            })
+
             let orden = {
                 comprador: buyer,
                 compras: cart,
@@ -46,6 +74,18 @@ const Checkout = () => {
         .then((res) => {
         setOrderId(res.id)
         clear()
+
+       Swal.fire({
+            icon: "success",
+            title: "¡La Fuerza está contigo!",
+            html: `
+                <p>Compra realizada con éxito</p>
+                <strong>ID de orden:</strong> ${res.id}
+            `,
+            background: "#111",
+            color: "#feda4a",
+            confirmButtonColor: "#2ecc71"
+        })
 
         })
         .catch((error)=> console.log(error))

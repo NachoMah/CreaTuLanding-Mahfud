@@ -2,11 +2,39 @@ import { useContext } from "react"
 import { CartContext } from "../context/CartContext"
 import { useNavigate } from "react-router-dom"
 import "../css/Cart.css"
+import Swal from "sweetalert2"
 
 const CartView = () => {
 
     const {cart, removeItem, clear, total} = useContext(CartContext)
     const navigate = useNavigate()
+    const confirmClear = () => {
+    Swal.fire({
+        title: "¿Estás seguro?",
+        text: "Se eliminarán todos los productos del carrito",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#6c757d",
+        confirmButtonText: "Sí, vaciar",
+        cancelButtonText: "Cancelar",
+        background: "#1c1c1c",
+        color: "#feda4a"
+        }).then((result) => {
+        if (result.isConfirmed) {
+            clear()
+
+            Swal.fire({
+                title: "Carrito vaciado",
+                icon: "success",
+                timer: 1500,
+                showConfirmButton: false,
+                background: "#1c1c1c",
+                color: "#feda4a"
+            })
+        }
+    })
+}
 
     return (
         <div className="cart-container">
@@ -62,7 +90,7 @@ const CartView = () => {
 
         <button 
             className="cart-btn cart-btn-danger"
-            onClick={clear}
+            onClick={confirmClear}
         >
             Vaciar carrito
         </button>

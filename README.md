@@ -20,6 +20,7 @@ Proyecto realizado para aprender las ases de React y desarrollo web
 - **React Icons**: utilizada para iconos.
 - **Firebase**: utilizada para base de datos.
 - **React Router Dom**: utilizada para implementar la navegación por rutas.
+- **sweetalert2**: utilizada apra dar avisos o alertas de diferentes acciones
 
 
 ### Herramientas utilizadas 🔧
