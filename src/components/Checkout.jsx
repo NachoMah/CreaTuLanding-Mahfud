@@ -36,6 +36,17 @@ const Checkout = () => {
                 color: "#feda4a",
                 confirmButtonColor: "#ff2c2c"
             })
+        }
+        else if (!buyer.email.includes("@") || !buyer.email.includes(".") || buyer.email.indexOf("@") > buyer.email.lastIndexOf(".")
+        ){
+            Swal.fire({
+                icon: "error",
+                title: "Email inválido",
+                text: "Debe contener @ y dominio válido",
+                background: "#111",
+                color: "#feda4a",
+                confirmButtonColor: "#ff2c2c"
+            })
             
         }else if (buyer.email !== validMail) {
             Swal.fire({
